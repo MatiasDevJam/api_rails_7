@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+    has_many :products, dependent: :destroy
+
     # bcrypt
     has_secure_password
 
