@@ -9,7 +9,7 @@ class Api::V1::OrdersController < ApplicationController
         
         options = get_links_serializer_options('api_v1_orders_path', @orders)
         
-        render json: OrderSerializer.new(current_user.orders).serializable_hash
+        render json: OrderSerializer.new(current_user.orders, options).serializable_hash
     end
 
     def show
